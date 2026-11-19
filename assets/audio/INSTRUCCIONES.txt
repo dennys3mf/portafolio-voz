@@ -1,0 +1,2 @@
+Coloca aquí tus demos MP3 de voz y audio, luego edita publishedAudio en app.js.
+No publiques trabajos de clientes o grabaciones de Shujiajia sin autorización.
