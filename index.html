@@ -3,110 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f5f0" />
+  <meta name="theme-color" content="#181b21" />
   <meta name="description" content="Portafolio de voz y audio de Dennys Marquez. Español peruano nativo, producción musical, mezcla vocal y proyectos de datos de voz para inteligencia artificial." />
   <title>Dennys Marquez — Voz, audio e IA</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
-  <div class="announcement">
-    <div class="container announcement-inner">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="availability">Abierto a proyectos de voz y audio · Trabajo remoto desde Perú</span>
-      <span class="announcement-right" data-i18n="region">Arequipa, Perú</span>
-    </div>
-  </div>
-  <header class="site-header container">
-    <a class="brand" href="#inicio" aria-label="Dennys Marquez, ir al inicio">
-      <span class="brand-icon" aria-hidden="true"><svg width="29" height="29" viewBox="0 0 29 29" fill="none"><path d="M3 15v-3M8 22V7M13 26V3M18 20V9M23 17v-6M27 14v-1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-      <span>DENNYS<span class="brand-second"> MARQUEZ</span><small>VOICE / SOUND</small></span>
-    </a>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="#muestras" data-i18n="navSamples">Muestras</a>
-      <a href="#experiencia" data-i18n="navExperience">Experiencia</a>
-      <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
-      <a href="#contacto" data-i18n="navContact">Contacto</a>
-    </nav>
-    <div class="lang-switch" aria-label="Idioma / Language" role="group">
-      <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-  </header>
-
   <main id="contenido">
-    <section class="hero container" id="inicio">
+    <section class="cover" id="inicio">
+      <img class="studio-photo" src="assets/images/microfono.webp" alt="" fetchpriority="high" />
+      <header class="site-header">
+        <a class="brand" href="#inicio">Dennys Marquez</a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#muestras" data-i18n="navSamples">Muestras</a>
+          <a href="#experiencia" data-i18n="navExperience">Experiencia</a>
+          <a href="#contacto" data-i18n="navContact">Contacto</a>
+        </nav>
+        <div class="lang-switch" aria-label="Idioma / Language" role="group">
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </header>
+
       <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="heroKicker">VOZ EN ESPAÑOL PERUANO · AUDIO PROFESIONAL</span></div>
-        <h1><span data-i18n="heroTitleOne">Detrás de cada</span><br/><em data-i18n="heroTitleTwo">gran sonido</em><br/><span data-i18n="heroTitleThree">hay una historia.</span></h1>
-        <p class="hero-desc" data-i18n="heroDescription">Soy Dennys. Combino mi experiencia en grabación de voces, producción musical y desarrollo de software para crear audio cuidado y contribuir a proyectos de inteligencia artificial.</p>
-        <div class="hero-actions">
-          <a href="#muestras" class="btn btn-dark"><span data-i18n="hearSamples">Explorar muestras</span><span aria-hidden="true">↗</span></a>
-          <a href="mailto:dennys.marquez.dev@gmail.com?subject=Proyecto%20de%20audio%20o%20voz" class="btn btn-outline"><span data-i18n="contactMe">Trabajemos juntos</span></a>
+        <h1><span data-i18n="heroTitleOne">Voz peruana.</span><br/><em data-i18n="heroTitleTwo">Oído de productor.</em></h1>
+        <p class="hero-desc" data-i18n="heroDescription">Grabación de voz, mezcla vocal y datos de voz para IA.</p>
+        <div id="muestras" aria-label="Muestras / Demos">
+          <div class="samples-grid">
+            <article class="sample-card" data-audio-id="natural">
+              <button class="track-button" type="button" data-track aria-describedby="audio-help" aria-labelledby="track-natural"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
+              <div class="track-copy"><h3 id="track-natural" data-i18n="sample1Title">Voz natural · Español peruano</h3><div class="track-wave" data-waveform="1" aria-hidden="true"></div></div>
+              <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar grabación de voz natural" hidden />
+            </article>
+            <article class="sample-card" data-audio-id="scripted">
+              <button class="track-button" type="button" data-track aria-describedby="audio-help" aria-labelledby="track-scripted"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
+              <div class="track-copy"><h3 id="track-scripted" data-i18n="trackScripted">Lectura para IA</h3></div>
+              <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar grabación de lectura de frases" hidden />
+            </article>
+            <article class="sample-card" data-audio-id="mix">
+              <button class="track-button" type="button" data-track aria-describedby="audio-help" aria-labelledby="track-mix"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
+              <div class="track-copy"><h3 id="track-mix" data-i18n="trackMix">Mezcla vocal</h3></div>
+              <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar mezcla vocal" hidden />
+            </article>
+            <article class="sample-card" data-audio-id="expressive">
+              <button class="track-button" type="button" data-track aria-describedby="audio-help" aria-labelledby="track-expressive"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
+              <div class="track-copy"><h3 id="track-expressive" data-i18n="trackExpressive">Narración expresiva</h3></div>
+              <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar narración" hidden />
+            </article>
+          </div>
+          <p class="demo-notice" id="audio-help"><span aria-hidden="true">ⓘ</span><span data-i18n="previewNote">Las muestras están pendientes. Puedes cargar un audio desde tu dispositivo para previsualizarlo; no se sube a internet ni se guarda en el sitio.</span></p>
         </div>
-        <div class="hero-footnote"><span class="small-round" aria-hidden="true">✦</span><span data-i18n="nativeLabel">Hablante nativo de español peruano</span></div>
-      </div>
-      <div class="hero-visual" aria-label="Ilustración abstracta de ondas de sonido" role="img">
-        <div class="visual-top"><span>DM / SOUND LAB</span><span>001—026</span></div>
-        <div class="visual-disc">
-          <div class="disc-outer"><div class="disc-middle"><div class="disc-inner"><svg viewBox="0 0 100 100" fill="none" width="86" height="86" aria-hidden="true"><path d="M15 50h10l6-22 11 46 10-57 12 64 10-32h11" stroke="currentColor" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
-        </div>
-        <div class="visual-wave" aria-hidden="true" id="heroWave"></div>
-        <div class="visual-bottom"><span data-i18n="visualLabel">SONIDO · VOZ · TECNOLOGÍA</span><span>↗</span></div>
+        <a class="hero-contact" href="#contacto" data-i18n="heroContact">Hablemos de tu proyecto</a>
       </div>
     </section>
 
-    <section class="cred-strip" aria-label="Especialidades principales">
-      <div class="container cred-grid">
-        <div><span class="cred-number">01</span><strong data-i18n="cred1">Español peruano nativo</strong></div>
-        <div><span class="cred-number">02</span><strong data-i18n="cred2">Producción musical</strong></div>
-        <div><span class="cred-number">03</span><strong data-i18n="cred3">Mezcla y masterización</strong></div>
-        <div><span class="cred-number">04</span><strong data-i18n="cred4">Software e IA</strong></div>
-      </div>
-    </section>
-
-    <section class="section container" id="muestras">
-      <div class="section-heading">
-        <div><div class="section-kicker" data-i18n="samplesKicker">01 / PORTAFOLIO DE AUDIO</div><h2 data-i18n="samplesTitle">Escucha mi trabajo<span class="heading-period">.</span></h2></div>
-        <p class="section-desc" data-i18n="samplesDesc">Un espacio para voces naturales, lectura guiada y producción musical. Las demostraciones se añadirán conforme estén listas.</p>
-      </div>
-      <div class="filter-row" role="group" aria-label="Filtrar muestras">
-        <button type="button" class="filter active" data-filter="all" aria-pressed="true" data-i18n="filterAll">Todas las muestras</button>
-        <button type="button" class="filter" data-filter="voice" aria-pressed="false" data-i18n="filterVoice">Voz</button>
-        <button type="button" class="filter" data-filter="music" aria-pressed="false" data-i18n="filterMusic">Producción musical</button>
-      </div>
-      <div class="samples-grid" id="sampleGrid">
-        <article class="sample-card" data-category="voice" data-audio-id="natural">
-          <div class="sample-card-top"><span class="sample-index">01 / VOICE</span><span class="sample-state" data-state-label data-i18n="pending">Próximamente</span></div>
-          <div class="sample-art art-one" aria-hidden="true"><div class="sample-bars" data-waveform="1"></div><span class="art-corner">VOICE / PERU</span></div>
-          <h3 data-i18n="sample1Title">Voz natural · Español peruano</h3><p data-i18n="sample1Desc">Presentación espontánea con pronunciación y ritmo conversacional.</p>
-          <div class="sample-footer"><span class="tag" data-i18n="sample1Tag">Habla natural</span><button type="button" class="upload-btn" data-upload="natural"><span data-i18n="previewAudio">Cargar audio para probar</span><span aria-hidden="true">↗</span></button></div>
-          <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar grabación de voz natural" hidden />
-        </article>
-        <article class="sample-card" data-category="voice" data-audio-id="scripted">
-          <div class="sample-card-top"><span class="sample-index">02 / VOICE DATA</span><span class="sample-state" data-state-label data-i18n="pending">Próximamente</span></div>
-          <div class="sample-art art-two" aria-hidden="true"><div class="sample-bars" data-waveform="2"></div><span class="art-corner">SPEECH / DATA</span></div>
-          <h3 data-i18n="sample2Title">Lectura de frases para IA</h3><p data-i18n="sample2Desc">Muestra de lectura clara y consistente, orientada a recopilación de voz.</p>
-          <div class="sample-footer"><span class="tag" data-i18n="sample2Tag">Datos de voz</span><button type="button" class="upload-btn" data-upload="scripted"><span data-i18n="previewAudio">Cargar audio para probar</span><span aria-hidden="true">↗</span></button></div>
-          <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar grabación de lectura de frases" hidden />
-        </article>
-        <article class="sample-card" data-category="music" data-audio-id="mix">
-          <div class="sample-card-top"><span class="sample-index">03 / MIXING</span><span class="sample-state" data-state-label data-i18n="pending">Próximamente</span></div>
-          <div class="sample-art art-three" aria-hidden="true"><div class="sample-bars" data-waveform="3"></div><span class="art-corner">VOCAL / MIX</span></div>
-          <h3 data-i18n="sample3Title">Mezcla y tratamiento vocal</h3><p data-i18n="sample3Desc">Espacio para mostrar una mezcla de voz realizada para un artista local, con autorización.</p>
-          <div class="sample-footer"><span class="tag" data-i18n="sample3Tag">Mezcla vocal</span><button type="button" class="upload-btn" data-upload="mix"><span data-i18n="previewAudio">Cargar audio para probar</span><span aria-hidden="true">↗</span></button></div>
-          <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar mezcla vocal" hidden />
-        </article>
-        <article class="sample-card" data-category="voice" data-audio-id="expressive">
-          <div class="sample-card-top"><span class="sample-index">04 / VOICE</span><span class="sample-state" data-state-label data-i18n="pending">Próximamente</span></div>
-          <div class="sample-art art-four" aria-hidden="true"><div class="sample-bars" data-waveform="4"></div><span class="art-corner">STORY / SOUND</span></div>
-          <h3 data-i18n="sample4Title">Narración y lectura expresiva</h3><p data-i18n="sample4Desc">Muestra de tono, dicción, pausas y expresividad de la voz.</p>
-          <div class="sample-footer"><span class="tag" data-i18n="sample4Tag">Narración</span><button type="button" class="upload-btn" data-upload="expressive"><span data-i18n="previewAudio">Cargar audio para probar</span><span aria-hidden="true">↗</span></button></div>
-          <audio controls class="audio-player" hidden preload="metadata"></audio><p class="audio-name" hidden></p><input type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg" class="file-input" aria-label="Seleccionar narración" hidden />
-        </article>
-      </div>
-      <p class="demo-notice"><span aria-hidden="true">ⓘ</span><span data-i18n="previewNote">Las muestras están pendientes. Puedes cargar un audio desde tu dispositivo para previsualizarlo; no se sube a internet ni se guarda en el sitio.</span></p>
-    </section>
 
     <section class="section skill-section" id="experiencia">
       <div class="container">
@@ -136,6 +87,6 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year">2026</span> DENNYS MARQUEZ</span><span data-i18n="footerTagline">VOZ · SONIDO · SOFTWARE</span><a href="#inicio" data-i18n="backTop">Volver arriba ↑</a></div></footer>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>

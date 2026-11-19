@@ -13,8 +13,8 @@ const strings = {
   es: {
     skip:'Saltar al contenido',availability:'Abierto a proyectos de voz y audio · Trabajo remoto desde Perú',region:'Arequipa, Perú',
     navSamples:'Muestras',navExperience:'Experiencia',navAbout:'Sobre mí',navContact:'Contacto',
-    heroKicker:'VOZ EN ESPAÑOL PERUANO · AUDIO PROFESIONAL',heroTitleOne:'Detrás de cada',heroTitleTwo:'gran sonido',heroTitleThree:'hay una historia.',
-    heroDescription:'Soy Dennys. Combino mi experiencia en grabación de voces, producción musical y desarrollo de software para crear audio cuidado y contribuir a proyectos de inteligencia artificial.',
+    heroTitleOne:'Voz peruana.',heroTitleTwo:'Oído de productor.',heroDescription:'Grabación de voz, mezcla vocal y datos de voz para IA.',
+    heroContact:'Hablemos de tu proyecto',trackScripted:'Lectura para IA',trackMix:'Mezcla vocal',trackExpressive:'Narración expresiva',
     hearSamples:'Explorar muestras',contactMe:'Trabajemos juntos',nativeLabel:'Hablante nativo de español peruano',visualLabel:'SONIDO · VOZ · TECNOLOGÍA',
     cred1:'Español peruano nativo',cred2:'Producción musical',cred3:'Mezcla y masterización',cred4:'Software e IA',
     samplesKicker:'01 / PORTAFOLIO DE AUDIO',samplesTitle:'Escucha mi trabajo',samplesDesc:'Un espacio para voces naturales, lectura guiada y producción musical. Las demostraciones se añadirán conforme estén listas.',
@@ -36,8 +36,8 @@ const strings = {
   en: {
     skip:'Skip to content',availability:'Available for voice & audio projects · Remote from Peru',region:'Arequipa, Peru',
     navSamples:'Samples',navExperience:'Experience',navAbout:'About',navContact:'Contact',
-    heroKicker:'NATIVE PERUVIAN SPANISH · AUDIO PRODUCTION',heroTitleOne:'Behind every',heroTitleTwo:'great sound',heroTitleThree:'is a story.',
-    heroDescription:'I’m Dennys. I bring together voice recording, music production, and software development to create thoughtful audio and contribute to AI projects.',
+    heroTitleOne:'Peruvian voice.',heroTitleTwo:'A producer’s ear.',heroDescription:'Voice recording, vocal mixing, and speech data for AI.',
+    heroContact:'Let’s talk about your project',trackScripted:'Reading for AI',trackMix:'Vocal mixing',trackExpressive:'Expressive narration',
     hearSamples:'Explore samples',contactMe:'Let’s work together',nativeLabel:'Native Peruvian Spanish speaker',visualLabel:'SOUND · VOICE · TECHNOLOGY',
     cred1:'Native Peruvian Spanish',cred2:'Music production',cred3:'Mixing & mastering',cred4:'Software & AI',
     samplesKicker:'01 / AUDIO PORTFOLIO',samplesTitle:'Listen to my work',samplesDesc:'A space for natural speech, guided reading, and music production. Recordings will be added as they become available.',
@@ -77,8 +77,6 @@ function translate(nextLang){
   });
   document.querySelectorAll('.sample-card').forEach(card=>{
     const loaded=card.dataset.loaded==='true';
-    card.querySelector('[data-state-label]').textContent=strings[lang][loaded?'ready':'pending'];
-    card.querySelector('[data-upload] span').textContent=strings[lang][loaded?'replaceAudio':'previewAudio'];
     const label=card.querySelector('.audio-name');
     if(loaded&&label.dataset.filename)label.textContent=strings[lang].fileSelected+label.dataset.filename;
   });
@@ -91,25 +89,10 @@ function waveHeight(i,variant){
   const b=Math.abs(Math.cos((i+5)*(.17+variant*.017)));
   return Math.round(6+(a*.5+b*.5)*75);
 }
-const heroWave=document.getElementById('heroWave');
-for(let i=0;i<70;i++){
-  const bar=document.createElement('i');bar.style.height=`${8+waveHeight(i,2)*.44}px`;heroWave.appendChild(bar);
-}
 document.querySelectorAll('[data-waveform]').forEach((el,idx)=>{
   for(let i=0;i<48;i++){
     const bar=document.createElement('i');bar.style.height=`${Math.max(7,waveHeight(i,idx+1))}%`;el.appendChild(bar);
   }
-});
-
-// Filter between voice and music samples.
-document.querySelectorAll('.filter').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const filter=btn.dataset.filter;
-    document.querySelectorAll('.filter').forEach(b=>{
-      const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));
-    });
-    document.querySelectorAll('.sample-card').forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter;});
-  });
 });
 
 const activeURLs=new Map();
@@ -119,15 +102,11 @@ function activateAudio(card,url,label){
   const name=card.querySelector('.audio-name');
   name.dataset.filename=label;name.textContent=strings[lang].fileSelected+label;name.hidden=false;
   card.dataset.loaded='true';
-  card.querySelector('[data-state-label]').classList.add('ready');
-  card.querySelector('[data-state-label]').textContent=strings[lang].ready;
-  card.querySelector('[data-upload] span').textContent=strings[lang].replaceAudio;
 }
 
 document.querySelectorAll('.sample-card').forEach(card=>{
   const id=card.dataset.audioId;
   const input=card.querySelector('input[type="file"]');
-  card.querySelector('[data-upload]').addEventListener('click',()=>input.click());
   input.addEventListener('change',()=>{
     const file=input.files?.[0];if(!file)return;
     const valid=file.type.startsWith('audio/')||/\.(wav|mp3|m4a|ogg|aac|flac)$/i.test(file.name);
@@ -139,6 +118,15 @@ document.querySelectorAll('.sample-card').forEach(card=>{
     activateAudio(card,objectURL,file.name);
   });
   const player=card.querySelector('audio');
+  const button=card.querySelector('[data-track]');
+  button.addEventListener('click',()=>{
+    if (!player.getAttribute('src')) input.click();
+    else if (player.paused) player.play().catch(()=>player.focus());
+    else player.pause();
+  });
+  for (const event of ['play','pause','ended']) {
+    player.addEventListener(event,()=>button.classList.toggle('playing',!player.paused && !player.ended));
+  }
   player.addEventListener('play',()=>{
     document.querySelectorAll('audio').forEach(other=>{if(other!==player)other.pause();});
   });

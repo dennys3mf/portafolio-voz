@@ -6,9 +6,8 @@ Portafolio web bilingüe (ES/EN) de una sola página, listo para abrir en el nav
 
 1. Abre `index.html` con Chrome, Edge o Firefox.
 2. Alterna `ES / EN` para ver ambos idiomas.
-3. Usa **Cargar audio para probar** en cualquier muestra para previsualizar una grabación local. **Esto NO publica ni sube el archivo.**
-4. El filtro `Voz / Producción musical` funciona sin servidor.
-5. Descarga el CV desde la sección Contacto.
+3. Pulsa el control de cualquier muestra pendiente para previsualizar una grabación local. **Esto NO publica ni sube el archivo.**
+4. Descarga el CV desde la sección Contacto.
 
 ## Cómo hacer que tus audios sean públicos
 
@@ -38,10 +37,10 @@ const publishedAudio = {
 
 - `index.html`: estructura, enlaces de correo y CV, etiquetas y secciones.
 - `styles.css`: paleta, tipografías y composición.
-- `app.js`: textos ES/EN, filtros y reproductores.
+- `app.js`: textos ES/EN y reproductores.
 - `assets/cv`: copias de los CV en PDF, ya incluidas.
 
-El correo de contacto es `dennys.marquez.dev@gmail.com`. Verifícalo antes de publicar. No se inventaron reseñas, clientes, métricas ni audios. Las tarjetas de muestra no reproducen audio hasta que agregues un archivo real.
+El correo de contacto es `dennys.marquez.dev@gmail.com`. Verifícalo antes de publicar. No se inventaron reseñas, clientes, métricas ni audios. Las muestras se habilitan al cargar un archivo local o publicar una grabación real.
 
 ## Sugerencias de grabación
 
