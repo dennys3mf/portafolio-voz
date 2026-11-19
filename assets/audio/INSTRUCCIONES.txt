@@ -1,2 +1,1 @@
-Coloca aquí tus demos MP3 de voz y audio, luego edita publishedAudio en app.js.
-No publiques trabajos de clientes o grabaciones de Shujiajia sin autorización.
+Los cuatro MP3 de esta carpeta son las grabaciones del portafolio. Las rutas y el orden de las pistas se definen en index.html.
