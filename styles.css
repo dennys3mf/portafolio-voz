@@ -66,6 +66,14 @@ h2 { font-size: clamp(60px, 8vw, 124px); line-height: .91 }
 .services li:nth-child(even) { color: var(--muted) }
 .production-photo img { height: auto; aspect-ratio: 1.25; object-position: center }
 .production-photo figcaption { color: var(--muted); font-size: 12px; margin-top: 8px }
+.beats { background: linear-gradient(147deg, var(--petrol), var(--ink) 85%) }
+.beats-heading { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 18px; margin-bottom: clamp(24px, 4vw, 56px) }
+.beats-heading .text-link { margin: 0 }
+.beats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 4vw, 55px) }
+.beats-grid iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: var(--ink) }
+.beats-grid h3 { font: 400 clamp(25px, 3vw, 46px)/1.1 var(--display); margin-top: 13px }
+.beats-grid a { text-decoration: none }
+.beats-grid a:hover, .beats-grid a:focus-visible { text-decoration: underline }
 .skill-section { background: #192223 }
 .experience-grid, .about-grid, .contact-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 8vw, 128px) }
 .experience-intro h2, .about-grid h2 { font-size: clamp(56px, 7.3vw, 112px) }
@@ -108,6 +116,7 @@ h2 { font-size: clamp(60px, 8vw, 124px); line-height: .91 }
   .services li + li { margin-top: 15px }
   .about-copy p { margin-top: 0 }
   .track-wave { height: 26px; gap: 1px }
+  .beats-grid { grid-template-columns: minmax(0, 1fr) }
   .footer-inner > span:nth-child(2) { display: none }
 }
 @media (prefers-reduced-motion: reduce) {

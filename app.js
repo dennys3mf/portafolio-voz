@@ -1,6 +1,6 @@
 const strings = {
   es: {
-    navServices:'Servicios',serviceVoice:'Grabación de voz en español peruano.',serviceProduction:'Producción musical y edición de audio.',serviceMix:'Mezcla vocal.',serviceData:'Grabación de datos de voz para inteligencia artificial.',conceptPhoto:'Imagen conceptual de producción de audio.',
+    beatsChannel:'Ver canal en YouTube',navServices:'Servicios',serviceVoice:'Grabación de voz en español peruano.',serviceProduction:'Producción musical y edición de audio.',serviceMix:'Mezcla vocal.',serviceData:'Grabación de datos de voz para inteligencia artificial.',conceptPhoto:'Imagen conceptual de producción de audio.',
     skip:'Saltar al contenido',availability:'Abierto a proyectos de voz y audio · Trabajo remoto desde Perú',region:'Arequipa, Perú',
     navSamples:'Muestras',navExperience:'Experiencia',navAbout:'Sobre mí',navContact:'Contacto',
     heroTitleOne:'Voz peruana',heroTitleTwo:'para tu proyecto.',heroDescription:'Grabación de voz, producción de audio y datos de voz para inteligencia artificial.',
@@ -16,7 +16,7 @@ const strings = {
     setupKicker:'ESTUDIO / HERRAMIENTAS',setupTitle:'Mi estudio',contactKicker:'04 / CONTACTO',contactTitle:'Hablemos de <em>tu proyecto.</em>',contactText:'Grabación de voz, mezcla de audio, producción musical o datos de voz para IA. Cuéntame qué necesitas.',downloadCV:'Descargar CV',footerTagline:'VOZ · SONIDO · SOFTWARE',backTop:'Volver arriba ↑',
   },
   en: {
-    navServices:'Services',serviceVoice:'Peruvian Spanish voice recording.',serviceProduction:'Music production and audio editing.',serviceMix:'Vocal mixing.',serviceData:'Speech data recording for artificial intelligence.',conceptPhoto:'Concept image of audio production.',
+    beatsChannel:'Visit the YouTube channel',navServices:'Services',serviceVoice:'Peruvian Spanish voice recording.',serviceProduction:'Music production and audio editing.',serviceMix:'Vocal mixing.',serviceData:'Speech data recording for artificial intelligence.',conceptPhoto:'Concept image of audio production.',
     skip:'Skip to content',availability:'Available for voice & audio projects · Remote from Peru',region:'Arequipa, Peru',
     navSamples:'Samples',navExperience:'Experience',navAbout:'About',navContact:'Contact',
     heroTitleOne:'Peruvian voice',heroTitleTwo:'for your project.',heroDescription:'Voice recording, audio production, and speech data for artificial intelligence.',
