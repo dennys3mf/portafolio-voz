@@ -58,6 +58,20 @@ h2 { font-size: clamp(38px, 5.25vw, 79px); line-height: 1.03 }
 .track-wave { height: 33px; display: flex; gap: 2px; align-items: center }
 .track-wave i { flex: 1; border-radius: 6px; background: #a9a39b75; min-width: 0 }
 .track-wave i.heard { background: var(--amber) }
+.track-wave { position: relative }
+.is-listening .track-wave::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: var(--playhead, 0%);
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 1px;
+  background: var(--ivory);
+  box-shadow: 0 0 10px 2px var(--amber);
+  pointer-events: none;
+}
+.is-listening .track-wave i.heard { box-shadow: 0 0 7px #e6a06360 }
 .audio-player { grid-column: 2; width: 100%; height: 42px; margin-top: 6px }
 .services { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(25px, 6vw, 100px); align-items: center }
 .services ul, .equipment-list { list-style: none; margin: 32px 0 0; padding: 0 }
