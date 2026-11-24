@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#181b21" />
+  <meta name="theme-color" content="#141819" />
   <meta name="description" content="Portafolio de voz y audio de Dennys Marquez. Español peruano nativo, producción musical, mezcla vocal y proyectos de datos de voz para inteligencia artificial." />
   <title>Dennys Marquez — Voz, audio e IA</title>
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
@@ -17,7 +20,9 @@
         <a class="brand" href="#inicio">Dennys Marquez</a>
         <nav class="main-nav" aria-label="Navegación principal">
           <a href="#muestras" data-i18n="navSamples">Muestras</a>
+          <a href="#servicios" data-i18n="navServices">Servicios</a>
           <a href="#experiencia" data-i18n="navExperience">Experiencia</a>
+          <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
           <a href="#contacto" data-i18n="navContact">Contacto</a>
         </nav>
         <div class="lang-switch" aria-label="Idioma / Language" role="group">
@@ -26,66 +31,95 @@
         </div>
       </header>
 
-      <div class="hero-copy">
-        <h1><span data-i18n="heroTitleOne">Voz peruana.</span><br/><em data-i18n="heroTitleTwo">Oído de productor.</em></h1>
-        <p class="hero-desc" data-i18n="heroDescription">Grabación de voz, mezcla vocal y datos de voz para IA.</p>
-        <div id="muestras" aria-label="Muestras / Demos">
+      <div class="hero-copy container">
+        <h1><span data-i18n="heroTitleOne">Voz peruana</span><br /><em data-i18n="heroTitleTwo">para tu proyecto.</em></h1>
+        <p data-i18n="heroDescription">Grabación de voz, producción de audio y datos de voz para inteligencia artificial.</p>
+        <a class="primary-action" href="#muestras" data-i18n="hearSamples">Escuchar muestras</a>
+      </div>
+    </section>
+
+    <section class="listening" id="muestras" aria-labelledby="samples-title">
+      <div class="container listening-layout">
+        <h2 id="samples-title" data-i18n="navSamples">Muestras</h2>
           <div class="samples-grid">
             <article class="sample-card">
               <button class="track-button" type="button" data-track aria-labelledby="track-voz-principal"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
-              <div class="track-copy"><h3 id="track-voz-principal" data-i18n="trackPrincipal">Voz principal</h3><div class="track-wave" data-waveform="1" aria-hidden="true"></div></div>
+              <div class="track-copy"><h3 id="track-voz-principal" data-i18n="trackPrincipal">Voz principal</h3><span class="track-duration"></span></div>
+              <div class="track-wave" aria-hidden="true"></div>
               <audio controls class="audio-player" hidden preload="none" src="assets/audio/voz-principal.mp3"></audio>
             </article>
             <article class="sample-card">
               <button class="track-button" type="button" data-track aria-labelledby="track-voz-toma-2"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
-              <div class="track-copy"><h3 id="track-voz-toma-2" data-i18n="trackTake2">Voz · Toma 2</h3></div>
+              <div class="track-copy"><h3 id="track-voz-toma-2" data-i18n="trackTake2">Voz · Toma 2</h3><span class="track-duration"></span></div>
+              <div class="track-wave" aria-hidden="true"></div>
               <audio controls class="audio-player" hidden preload="none" src="assets/audio/voz-toma-2.mp3"></audio>
             </article>
             <article class="sample-card">
               <button class="track-button" type="button" data-track aria-labelledby="track-voz-toma-3"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
-              <div class="track-copy"><h3 id="track-voz-toma-3" data-i18n="trackTake3">Voz · Toma 3</h3></div>
+              <div class="track-copy"><h3 id="track-voz-toma-3" data-i18n="trackTake3">Voz · Toma 3</h3><span class="track-duration"></span></div>
+              <div class="track-wave" aria-hidden="true"></div>
               <audio controls class="audio-player" hidden preload="none" src="assets/audio/voz-toma-3.mp3"></audio>
             </article>
             <article class="sample-card">
               <button class="track-button" type="button" data-track aria-labelledby="track-voz-toma-4"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="play-icon" d="M4 2v12l10-6z"/><path class="pause-icon" d="M4 2h3v12H4zm5 0h3v12H9z"/></svg></button>
-              <div class="track-copy"><h3 id="track-voz-toma-4" data-i18n="trackTake4">Voz · Toma 4</h3></div>
+              <div class="track-copy"><h3 id="track-voz-toma-4" data-i18n="trackTake4">Voz · Toma 4</h3><span class="track-duration"></span></div>
+              <div class="track-wave" aria-hidden="true"></div>
               <audio controls class="audio-player" hidden preload="none" src="assets/audio/voz-toma-4.mp3"></audio>
             </article>
           </div>
-        </div>
-        <a class="hero-contact" href="#contacto" data-i18n="heroContact">Hablemos de tu proyecto</a>
       </div>
     </section>
 
+    <section class="section container services" id="servicios" aria-labelledby="services-title">
+      <div class="services-copy">
+        <h2 id="services-title" data-i18n="navServices">Servicios</h2>
+        <ul>
+          <li data-i18n="serviceVoice">Grabación de voz en español peruano.</li>
+          <li data-i18n="serviceProduction">Producción musical y edición de audio.</li>
+          <li data-i18n="serviceMix">Mezcla vocal.</li>
+          <li data-i18n="serviceData">Grabación de datos de voz para inteligencia artificial.</li>
+        </ul>
+      </div>
+      <figure class="production-photo">
+        <img src="assets/images/produccion.webp" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+        <figcaption data-i18n="conceptPhoto">Imagen conceptual de producción de audio.</figcaption>
+      </figure>
+    </section>
 
     <section class="section skill-section" id="experiencia">
       <div class="container">
-        <div class="section-kicker" data-i18n="experienceKicker">02 / EXPERIENCIA & CAPACIDADES</div>
         <div class="experience-grid">
-          <div class="experience-intro"><h2 data-i18n="experienceTitle">Del estudio al <em>mundo digital.</em></h2><p data-i18n="experienceLead">Mi trabajo conecta dos disciplinas: el detalle del sonido y el pensamiento técnico del desarrollo de software.</p><div class="signature">DM<span>.</span></div></div>
+          <div class="experience-intro"><h2 data-i18n="experienceTitle">Del estudio al <em>mundo digital.</em></h2><p data-i18n="experienceLead">Mi trabajo conecta dos disciplinas: el detalle del sonido y el pensamiento técnico del desarrollo de software.</p></div>
           <div class="experience-cards">
-            <div class="experience-item"><span class="xp-number">01</span><div><h3 data-i18n="xp1Title">Producción musical y mezcla de voces</h3><p data-i18n="xp1Text">He grabado música y voces para artistas locales en Perú. Trabajo con edición de audio, mezcla vocal, masterización y procesamiento de sonidos de batería utilizando Ableton Live Lite.</p><div class="mini-tags"><span>Ableton Live Lite</span><span data-i18n="tagMix">Mezcla</span><span data-i18n="tagMaster">Masterización</span></div></div></div>
-            <div class="experience-item"><span class="xp-number">02</span><div><h3 data-i18n="xp2Title">Grabaciones de voz en español peruano</h3><p data-i18n="xp2Text">Experiencia práctica realizando muestras de grabación y lectura de frases mediante Shujiajia, con atención al seguimiento de instrucciones y a la calidad del audio.</p><div class="mini-tags"><span>Shujiajia</span><span data-i18n="tagSpeech">Audio hablado</span></div></div></div>
-            <div class="experience-item"><span class="xp-number">03</span><div><h3 data-i18n="xp3Title">AhorraTiempo.pe · Voz e inteligencia artificial</h3><p data-i18n="xp3Text">Participación como desarrollador en una plataforma digital de trámites que incorpora interacción por voz y funciones relacionadas con inteligencia artificial.</p><div class="mini-tags"><span data-i18n="tagVoiceTech">Interacción por voz</span><span>Software</span><span>IA</span></div></div></div>
+            <div class="experience-item"><div><h3 data-i18n="xp1Title">Producción musical y mezcla de voces</h3><p data-i18n="xp1Text">He grabado música y voces para artistas locales en Perú. Trabajo con edición de audio, mezcla vocal, masterización y procesamiento de sonidos de batería utilizando Ableton Live Lite.</p><div class="mini-tags"><span>Ableton Live Lite</span><span data-i18n="tagMix">Mezcla</span><span data-i18n="tagMaster">Masterización</span></div></div></div>
+            <div class="experience-item"><div><h3 data-i18n="xp2Title">Grabaciones de voz en español peruano</h3><p data-i18n="xp2Text">Experiencia práctica realizando muestras de grabación y lectura de frases mediante Shujiajia, con atención al seguimiento de instrucciones y a la calidad del audio.</p><div class="mini-tags"><span>Shujiajia</span><span data-i18n="tagSpeech">Audio hablado</span></div></div></div>
+            <div class="experience-item"><div><h3 data-i18n="xp3Title">AhorraTiempo.pe · Voz e inteligencia artificial</h3><p data-i18n="xp3Text">Participación como desarrollador en una plataforma digital de trámites que incorpora interacción por voz y funciones relacionadas con inteligencia artificial.</p><div class="mini-tags"><span data-i18n="tagVoiceTech">Interacción por voz</span><span>Software</span><span>IA</span></div></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section container" id="sobre-mi">
-      <div class="section-kicker" data-i18n="aboutKicker">03 / SOBRE MÍ</div>
+      <p class="section-label" data-i18n="navAbout">Sobre mí</p>
       <div class="about-grid">
-        <div><h2 data-i18n="aboutTitle">Tecnología en la mente.<br/>Música en los oídos.</h2><div class="about-deco" aria-hidden="true"><span>DM</span><div></div></div></div>
+        <div><h2 data-i18n="aboutTitle">Tecnología en la mente.<br/>Música en los oídos.</h2></div>
         <div class="about-copy"><p data-i18n="aboutText">Soy Dennys Marquez, titulado en Diseño y Desarrollo de Software por TECSUP. Además de crear aplicaciones web y móviles, he trabajado en producción musical y grabación de voces para artistas locales. Me interesa colaborar en proyectos que necesiten buen criterio auditivo, español peruano natural y una perspectiva técnica.</p><a href="mailto:dennys.marquez.dev@gmail.com?subject=Colaboraci%C3%B3n%20en%20voz%20y%20audio" class="text-link"><span data-i18n="talkProject">Conversemos sobre tu proyecto</span><span>↗</span></a></div>
       </div>
-      <div class="equipment-box"><div><div class="section-kicker" data-i18n="setupKicker">ESTUDIO / HERRAMIENTAS</div><h3 data-i18n="setupTitle">Mi equipo de trabajo</h3></div><div class="equipment-list"><span>Blue Yeti Nano</span><span>Ableton Live Lite</span><span>Shujiajia</span><span>Windows 11</span></div></div>
+    </section>
+
+    <section class="studio" aria-labelledby="studio-title">
+      <div class="container studio-layout">
+        <h2 id="studio-title" data-i18n="setupTitle">Mi estudio</h2>
+        <ul class="equipment-list"><li>Blue Yeti Nano</li><li>Ableton Live Lite</li><li>Windows 11</li></ul>
+      </div>
     </section>
 
     <section class="contact-section" id="contacto">
-      <div class="container contact-inner"><div><div class="section-kicker" data-i18n="contactKicker">04 / CONTACTO</div><h2 data-i18n="contactTitle">¿Tienes un proyecto<br/><em>en mente?</em></h2><p data-i18n="contactText">Grabación de voz, mezcla de audio, producción musical o datos de voz para IA. Cuéntame qué necesitas.</p></div><div class="contact-actions"><a class="btn btn-light" href="mailto:dennys.marquez.dev@gmail.com?subject=Proyecto%20de%20voz%20y%20audio"><span>dennys.marquez.dev@gmail.com</span><span>↗</span></a><div class="cv-links"><span data-i18n="downloadCV">Descargar CV:</span> <a href="assets/cv/dennys-marquez-cv-espanol.pdf" download>Español ↓</a> <a href="assets/cv/dennys-marquez-cv-english.pdf" download>English ↓</a></div></div></div>
+      <div class="container contact-inner"><div><h2 data-i18n="contactTitle">Hablemos de <em>tu proyecto.</em></h2><p data-i18n="contactText">Grabación de voz, mezcla de audio, producción musical o datos de voz para IA. Cuéntame qué necesitas.</p></div><div class="contact-actions"><a class="btn btn-light" href="mailto:dennys.marquez.dev@gmail.com?subject=Proyecto%20de%20voz%20y%20audio"><span>dennys.marquez.dev@gmail.com</span><span>↗</span></a><div class="cv-links"><span data-i18n="downloadCV">Descargar CV</span> <a href="assets/cv/dennys-marquez-cv-espanol.pdf" download>Español ↓</a> <a href="assets/cv/dennys-marquez-cv-english.pdf" download>English ↓</a></div></div></div>
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year">2026</span> DENNYS MARQUEZ</span><span data-i18n="footerTagline">VOZ · SONIDO · SOFTWARE</span><a href="#inicio" data-i18n="backTop">Volver arriba ↑</a></div></footer>
-  <script src="app.js?v=3" defer></script>
+  <script src="waveforms.js?v=4" defer></script>
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>
